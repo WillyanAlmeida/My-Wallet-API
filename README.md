@@ -21,6 +21,14 @@ The project follows a modular structure with separate routers, controllers, serv
 
 ## Getting Started
 
+## technologies used in the application
+
+- Node.js
+- Express
+- TypeScript
+- Prisma ORM
+- Postgres
+
 
 ### Installation
 
@@ -38,11 +46,21 @@ The project follows a modular structure with separate routers, controllers, serv
     npm install
 
     ```
+3. Create a PostgreSQL database with whatever name you want
 
-3. Configure your environment variables follow env.example
+4. Configure the `.env.development` file using the `.env.example` file 
+5. Run all migrations
+```bash
+npm run dev:migration:run
+```
+
+6. Run the back-end in a development environment:
+
+```bash
+npm run dev
+```
 
    
-  
 
 ## Running the Server
 

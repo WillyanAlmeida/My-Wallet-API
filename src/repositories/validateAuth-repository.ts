@@ -1,12 +1,12 @@
 
-//import { Prisma } from '@prisma/client';
+import { Prisma } from '@prisma/client';
 import { prisma } from '../config';
 
 
-async function findUser(token: number) {
-    return prisma.session.findFirst({
+async function findUser(userId: number) {
+    return prisma.users.findFirst({
       where: {
-        token,
+        userId,
       },
     });
   }

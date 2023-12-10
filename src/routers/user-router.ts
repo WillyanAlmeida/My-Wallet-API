@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { schemasignin, schemasignup } from "../schemas";
-import { singInPost, usersPost } from "controllers";
-import { validateBody } from "middlewares";
+import { singInPost, usersPost } from "../controllers";
+import { validateBody } from "../middlewares";
 
 
 
