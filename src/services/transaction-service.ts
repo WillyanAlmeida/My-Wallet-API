@@ -1,8 +1,6 @@
 import { invalidDataError, notFoundError } from '../errors';
-import { participantsRepository } from '../repositories'
 import { Participant } from '@prisma/client';
-import { CreateParticipantsParams } from '../protocols';
-import { transactionRepository } from '../repositories/transaction-repository';
+import { transactionRepository } from '../repositories';
 
 
 async function createTransaction(value, description, id, type) {

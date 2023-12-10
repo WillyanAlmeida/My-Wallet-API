@@ -4,9 +4,8 @@ import express, { Express } from 'express';
 import cors from 'cors';
 import { handleApplicationErrors } from './middlewares';
  import {
-   betsRouter,
-   gamesRouter,
-   participantsRouter,
+   userRouter,
+   transactionRouter,
  } from './routers';
 import { loadEnv, connectDb, disconnectDB } from './config';
 
@@ -17,9 +16,8 @@ app
   .use(cors())
   .use(express.json())
   .get('/health', (_req, res) => res.send('I am ok'))
-  .use('/participants', participantsRouter)
-  .use('/games', gamesRouter)
-  .use('/bets', betsRouter)
+  .use('/transaction', transactionRouter)
+  .use('/user', userRouter)
   .use(handleApplicationErrors);
 
 export function init(): Promise<Express> {

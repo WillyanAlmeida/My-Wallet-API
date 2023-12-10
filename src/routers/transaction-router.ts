@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { validateBody } from '../middlewares';
-import { createTransaction, postBets } from '../controllers';
-import { betsSchema, schemastransaction } from '../schemas';
+import { createTransaction } from '../controllers';
+import { schemastransaction } from '../schemas';
 
 const transactionRouter = Router();
 
