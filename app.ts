@@ -2,12 +2,12 @@
 import 'express-async-errors';
 import express, { Express } from 'express';
 import cors from 'cors';
-import { handleApplicationErrors } from './middlewares';
+import { handleApplicationErrors } from './src/middlewares';
  import {
    transactionRouter,
    userRouter,
  } from './src/routers';
-import { loadEnv, connectDb, disconnectDB } from './config';
+import { loadEnv, connectDb, disconnectDB } from './src/config';
 
 loadEnv();
 

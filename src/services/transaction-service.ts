@@ -10,9 +10,9 @@ async function createTransaction(value, description, userId, type) {
 
  return participants
 }
-async function findTransaction(value, description, userId, type) {
+async function findTransaction(userId) {
 
-    const participants = await transactionRepository.createTransaction(value, description, userId, type)
+    const participants = await transactionRepository.findTransaction(userId)
   
    return participants
   }

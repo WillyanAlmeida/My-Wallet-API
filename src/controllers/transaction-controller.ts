@@ -14,24 +14,12 @@ export async function createTransaction(req: Request, res: Response) {
     res.status(httpStatus.CREATED).send(newtransaction);
 }
 
-export async function findTransaction (req: Request, res: Response){
-    const { value, description, id } = req.body;
-    let type = req.params.id
+export async function findTransaction(req: Request, res: Response){
+    const userId = res.locals.sessions.userId;
 
-    const newtransaction = await transactionService.createTransaction(value, description, id, type);
+    const newtransaction = await transactionService.findTransaction(userId);
     res.status(httpStatus.CREATED).send(newtransaction);
 
-
-
-try{
-    //const transactions = (await db.collection('transactions').find({userID: res.locals.sessions.userID}).toArray()).reverse();
-    
-    //res.status(200).send((transactions));
-
-} catch (error) {
-        console.log(error);
-        res.sendStatus(401);
-    }
 }
 
 
