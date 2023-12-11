@@ -4,7 +4,7 @@ This is the backend for a digital wallet application. The application allows use
 
 ## Check the Deploy here
 
-[]()
+[https://mywallet-api-3ymd.onrender.com](https://mywallet-api-3ymd.onrender.com)
 
 ## Project Structure
 
@@ -12,12 +12,12 @@ The project follows a modular structure with separate routers, controllers, serv
 
 -   **User Routes:** Defined in `user.router`
 
-    -   `POST /signup`: User registration
-    -   `POST /signin`: User authentication
+    -   `POST user/signup`: User registration
+    -   `POST user/signin`: User authentication
 
 -   **Transaction Routes:** Defined in `transaction.routes.js`
-    -   `POST /transation`: New transaction
-    -   `GET /transation`: Get transaction history
+    -   `POST /transation/new-transaction/:id`: New transaction
+    -   `GET /transation/home`: Get transaction history
 
 ## Getting Started
 

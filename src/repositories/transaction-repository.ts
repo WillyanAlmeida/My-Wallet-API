@@ -5,8 +5,6 @@ import dayjs from "dayjs";
 
 
 export async function createTransaction(value, description, userId, type){
-
-
     const response = await prisma.transactions.create({
         data: {
             userId: userId,
@@ -28,7 +26,6 @@ export async function findTransaction(userId) {
     });
 
     return response
-
 }
 
 export const transactionRepository = {

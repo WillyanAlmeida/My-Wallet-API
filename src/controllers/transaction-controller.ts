@@ -1,9 +1,7 @@
-
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
 import { transactionService } from "../services";
 
-import dayjs from "dayjs";
 
 
 export async function createTransaction(req: Request, res: Response) {
@@ -14,7 +12,7 @@ export async function createTransaction(req: Request, res: Response) {
     res.status(httpStatus.CREATED).send(newtransaction);
 }
 
-export async function findTransaction(req: Request, res: Response){
+export async function findTransaction(req: Request, res: Response) {
     const userId = res.locals.sessions.userId;
 
     const newtransaction = await transactionService.findTransaction(userId);

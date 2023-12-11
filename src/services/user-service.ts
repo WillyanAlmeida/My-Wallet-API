@@ -4,7 +4,6 @@ import {  duplicatedEmailError } from '../errors';
 import { userRepository } from '../repositories';
 
 export async function createUser({ name, email, password }: CreateusersParams): Promise<users> {
-
   await validateUniqueEmailOrFail(email);
 
   const hashedPassword = await bcrypt.hash(password, 12);

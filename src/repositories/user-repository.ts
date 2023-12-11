@@ -7,7 +7,6 @@ async function findByEmail(email: string, select?: Prisma.usersSelect) {
       email,
     },
   };
-
   if (select) {
     params.select = select;
   }

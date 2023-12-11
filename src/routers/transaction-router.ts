@@ -6,7 +6,7 @@ import { authenticateToken } from '../middlewares';
 
 const transactionRouter = Router();
 
-transactionRouter.post("/nova-transacao/:id", authenticateToken, validateBody(schemastransaction), createTransaction)
+transactionRouter.post("/new-transaction/:id", authenticateToken, validateBody(schemastransaction), createTransaction)
 transactionRouter.get("/home", authenticateToken, findTransaction);
 
 

@@ -3,21 +3,16 @@ import { transactionRepository } from '../repositories';
 import { Prisma } from '@prisma/client';
 
 
-
 async function createTransaction(value, description, userId, type) {
+    const participants = await transactionRepository.createTransaction(value, description, userId, type)
 
-  const participants = await transactionRepository.createTransaction(value, description, userId, type)
-
- return participants
+    return participants
 }
 async function findTransaction(userId) {
-
     const participants = await transactionRepository.findTransaction(userId)
-  
-   return participants
-  }
 
-
+    return participants
+}
 
 export const transactionService = {
     createTransaction,

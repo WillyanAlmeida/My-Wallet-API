@@ -2,16 +2,16 @@ import { users } from '@prisma/client';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { invalidCredentialsError } from '../errors';
-import { authenticationRepository, userRepository } from '../repositories';
+import { userRepository } from '../repositories';
 import { exclude } from '../utils/prisma-utils';
 
 async function signIn(params: SignInParams): Promise<SignInResult> {
   const { email, password } = params;
 
   const user = await getUserOrFail(email);
+  if (!user) throw invalidCredentialsError()
 
   await validatePasswordOrFail(password, user.password);
-
   const token = await createSession(user.id);
 
   return {
@@ -29,7 +29,6 @@ async function getUserOrFail(email: string): Promise<GetUserOrFailResult> {
 
 async function createSession(userId: number) {
   const token = jwt.sign({ userId }, process.env.JWT_SECRET) as undefined;
-
   return token;
 }
 
